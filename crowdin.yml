@@ -1,0 +1,12 @@
+"project_id" : "465934"
+"api_token" : CROWDIN_API
+"base_path" : "."
+"base_url" : "https://api.crowdin.com"
+"preserve_hierarchy": true
+
+files: [
+ {
+  "source" : "/Assets/Resources/l10n/en-EN.txt",
+  "translation" : "/Assets/Resources/l10n/%locale%.txt",
+ }
+]
