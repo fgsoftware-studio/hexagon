@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9085540423924966436
+--- !u!114 &-9159092494290282979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.assets.bank
   m_EditorClassIdentifier: 
-  Path: ../h3xagon(fmod)/h3xagon/Build/Desktop/Master.assets.bank
+  Path: h3xagon(fmod)/h3xagon/Build/Desktop/Master.assets.bank
   Name: Master.assets
   StudioPath: bank:/Master.assets
-  lastModified: 637516009040000000
-  LoadResult: 0
-  FileSizes: []
+  lastModified: 637875683664955141
+  FileSizes:
+  - Name: Desktop
+    Value: 17056
   Exists: 1
---- !u!114 &-8577736699931578548
+--- !u!114 &-8686054988704453385
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31,58 +32,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../h3xagon(fmod)/h3xagon/Build/Desktop/Master.strings.bank
+  Path: h3xagon(fmod)/h3xagon/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637516009040000000
-  LoadResult: 0
+  lastModified: 637875683665345183
   FileSizes:
   - Name: Desktop
-    Value: 896
+    Value: 908
   Exists: 1
---- !u!114 &-7668821835003659583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/music/music
-  m_EditorClassIdentifier: 
-  Path: event:/music/music
-  guid: d34c54f062c66849810f0f4720b64dca
-  Banks:
-  - {fileID: 4127166417173537629}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 750
-  MaxDistance: 10000
-  Length: 60000
---- !u!114 &-5182245881135022586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.streams.bank
-  m_EditorClassIdentifier: 
-  Path: ../h3xagon(fmod)/h3xagon/Build/Desktop/Master.streams.bank
-  Name: Master.streams
-  StudioPath: bank:/Master.streams
-  lastModified: 637516009040000000
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &-2905831186939733943
+--- !u!114 &-6681221143247967715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,9 +53,13 @@ MonoBehaviour:
   m_Name: event:/ui/button
   m_EditorClassIdentifier: 
   Path: event:/ui/button
-  guid: 8d9996168bafa049afbf181bbfa847cd
+  Guid:
+    Data1: 378968461
+    Data2: 1235267467
+    Data3: 454606767
+    Data4: -850941761
   Banks:
-  - {fileID: 4127166417173537629}
+  - {fileID: 8396312654621245314}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -105,6 +67,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1072608311370528980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.streams.bank
+  m_EditorClassIdentifier: 
+  Path: h3xagon(fmod)/h3xagon/Build/Desktop/Master.streams.bank
+  Name: Master.streams
+  StudioPath: bank:/Master.streams
+  lastModified: 637875683665295191
+  FileSizes:
+  - Name: Desktop
+    Value: 630688
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,21 +100,21 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -8577736699931578548}
-  - {fileID: -9085540423924966436}
-  - {fileID: 4127166417173537629}
-  - {fileID: -5182245881135022586}
+  - {fileID: -8686054988704453385}
+  - {fileID: -9159092494290282979}
+  - {fileID: 8396312654621245314}
+  - {fileID: -1072608311370528980}
   EditorEvents:
-  - {fileID: -2905831186939733943}
-  - {fileID: -7668821835003659583}
+  - {fileID: -6681221143247967715}
+  - {fileID: 8531538351733962341}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 4127166417173537629}
+  - {fileID: 8396312654621245314}
   StringsBanks:
-  - {fileID: -8577736699931578548}
-  stringsBankWriteTime: 637516009040000000
-  cacheVersion: 6
---- !u!114 &4127166417173537629
+  - {fileID: -8686054988704453385}
+  cacheTime: 637875683665345183
+  cacheVersion: 10
+--- !u!114 &8396312654621245314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,10 +126,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: ../h3xagon(fmod)/h3xagon/Build/Desktop/Master.bank
+  Path: h3xagon(fmod)/h3xagon/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637516009040000000
-  LoadResult: 0
-  FileSizes: []
+  lastModified: 637875683664655195
+  FileSizes:
+  - Name: Desktop
+    Value: 4180
   Exists: 1
+--- !u!114 &8531538351733962341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/music/music
+  m_EditorClassIdentifier: 
+  Path: event:/music/music
+  Guid:
+    Data1: -262910765
+    Data2: 1231603298
+    Data3: 1192169345
+    Data4: -900876768
+  Banks:
+  - {fileID: 8396312654621245314}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 750
+  MaxDistance: 10000
+  Length: 60000

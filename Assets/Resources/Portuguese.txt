@@ -1,0 +1,3 @@
+btn_play=Jogar
+btn_settings=Definições
+btn_quit=Sair

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using FMOD;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -35,28 +34,34 @@ namespace FMODUnity
             Settings.AddPlatformTemplate<PlatformMac>("52eb9df5db46521439908db3a29a1bbb");
         }
 
-        public override string DisplayName => "macOS";
-
-        public override void DeclareUnityMappings(Settings settings)
+        public override string DisplayName { get { return "macOS"; } }
+        public override void DeclareRuntimePlatforms(Settings settings)
         {
             settings.DeclareRuntimePlatform(RuntimePlatform.OSXPlayer, this);
-#if UNITY_EDITOR
-            settings.DeclareBuildTarget(BuildTarget.StandaloneOSX, this);
-#endif
-        }
-
-        public override string GetPluginPath(string pluginName)
-        {
-            return string.Format("{0}/{1}.bundle", GetPluginBasePath(), pluginName);
         }
 
 #if UNITY_EDITOR
-        public override Legacy.Platform LegacyIdentifier => Legacy.Platform.Mac;
-
-        protected override IEnumerable<string> GetRelativeBinaryPaths(BuildTarget buildTarget, bool allVariants,
-            string suffix)
+        public override IEnumerable<BuildTarget> GetBuildTargets()
         {
-            yield return string.Format("mac/fmodstudio{0}.bundle", suffix);
+            yield return BuildTarget.StandaloneOSX;
+        }
+
+        public override Legacy.Platform LegacyIdentifier { get { return Legacy.Platform.Mac; } }
+
+        protected override BinaryAssetFolderInfo GetBinaryAssetFolder(BuildTarget buildTarget)
+        {
+            return new BinaryAssetFolderInfo("mac", "Plugins");
+        }
+
+        protected override IEnumerable<FileRecord> GetBinaryFiles(BuildTarget buildTarget, bool allVariants, string suffix)
+        {
+            yield return new FileRecord(string.Format("fmodstudio{0}.bundle", suffix));
+        }
+
+        protected override IEnumerable<FileRecord> GetOptionalBinaryFiles(BuildTarget buildTarget, bool allVariants)
+        {
+            yield return new FileRecord("gvraudio.bundle");
+            yield return new FileRecord("resonanceaudio.bundle");
         }
 
         public override bool SupportsAdditionalCPP(BuildTarget target)
@@ -64,12 +69,22 @@ namespace FMODUnity
             return false;
         }
 #endif
-#if UNITY_EDITOR
-        public override OutputType[] ValidOutputTypes => sValidOutputTypes;
 
-        private static readonly OutputType[] sValidOutputTypes =
+        public override string GetPluginPath(string pluginName)
         {
-            new OutputType {displayName = "Core Audio", outputType = OUTPUTTYPE.COREAUDIO}
+            return string.Format("{0}/{1}.bundle", GetPluginBasePath(), pluginName);
+        }
+#if UNITY_EDITOR
+        public override OutputType[] ValidOutputTypes
+        {
+            get
+            {
+                return sValidOutputTypes;
+            }
+        }
+
+        private static OutputType[] sValidOutputTypes = {
+           new OutputType() { displayName = "Core Audio", outputType = FMOD.OUTPUTTYPE.COREAUDIO },
         };
 #endif
     }

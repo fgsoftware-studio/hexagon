@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Workspace" id="{af5a0465-3906-4172-b3be-c2cb43930a38}">
 		<property name="builtBanksSeparateAssets">
 			<value>true</value>
@@ -7,7 +7,6 @@
 		<property name="builtBanksSeparateStreams">
 			<value>true</value>
 		</property>
-		<property name="builtBanksEncryptionKey" />
 		<relationship name="masterEventFolder">
 			<destination>{349bcda1-0fdb-4665-898c-345b8c235027}</destination>
 		</relationship>

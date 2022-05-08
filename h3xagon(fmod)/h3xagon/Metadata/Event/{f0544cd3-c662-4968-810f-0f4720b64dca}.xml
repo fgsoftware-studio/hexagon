@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<objects serializationModel="Studio.02.01.00">
+<objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{f0544cd3-c662-4968-810f-0f4720b64dca}">
 		<property name="color">
 			<value>Blue</value>
@@ -65,7 +65,14 @@
 			<destination>{49cd94d7-fe6e-4741-9abc-309e67be2cc5}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{621dd825-56ae-4a04-a8a0-663dd9be8977}" />
+	<object class="EventAutomatableProperties" id="{621dd825-56ae-4a04-a8a0-663dd9be8977}">
+		<property name="minimumDistance">
+			<value>750</value>
+		</property>
+		<property name="maximumDistance">
+			<value>10000</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{4dec9203-fc13-438e-95f0-ead85ffe11db}" />
 	<object class="GroupTrack" id="{c4a82cb5-81c3-4eb6-b2f6-4e57c30c3276}">
 		<relationship name="mixerGroup">

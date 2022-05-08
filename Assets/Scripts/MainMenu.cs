@@ -2,20 +2,17 @@
 using FMODUnity;
 using GameJolt.API;
 using GameJolt.UI;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class MainMenu : MonoBehaviour
 {
-    public Text fps;
-    public Text version;
-    public Text platform;
-    public Text integrity;
+    public TMP_Text version;
+    public TMP_Text platform;
+    public TMP_Text integrity;
     public GameObject playercolor;
-
-    public int avgFrameRate;
 
     private EventInstance button;
     private EventInstance music;
@@ -58,14 +55,6 @@ public class MainMenu : MonoBehaviour
                     Debug.Log("user not signed");
             });
         }
-    }
-
-    private void Update()
-    {
-        float current = 0;
-        current = (int) (1f / Time.unscaledDeltaTime);
-        avgFrameRate = (int) current;
-        fps.text = avgFrameRate + " FPS";
     }
 
     public void ButtonPlay()

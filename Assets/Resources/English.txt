@@ -1,0 +1,3 @@
+btn_play=Play
+btn_settings=Settings
+btn_quit=Quit

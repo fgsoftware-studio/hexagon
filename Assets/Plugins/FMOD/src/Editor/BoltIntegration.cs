@@ -1,8 +1,14 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Reflection;
-using UnityEditor;
 using UnityEngine;
-#if UNITY_BOLT_EXIST
+using UnityEditor;
+
+#if (UNITY_VISUALSCRIPTING_EXIST)
+using Unity.VisualScripting;
+#elif (UNITY_BOLT_EXIST)
 using Ludiq;
 using Bolt;
 #endif
@@ -11,18 +17,18 @@ namespace FMODUnity
 {
     public class BoltIntegration : MonoBehaviour
     {
-        [MenuItem("FMOD/Generate Bolt Unit Options")]
+        [MenuItem("FMOD/Generate Visual Scripting Units")]
         public static void GenerateBoltUnitOptions()
         {
-#if UNITY_BOLT_EXIST
+#if (UNITY_BOLT_EXIST || UNITY_VISUALSCRIPTING_EXIST)
             BuildBoltUnitOptions();
 #else
             TriggerBuild();
 #endif
         }
 
-#if !UNITY_BOLT_EXIST
-        [MenuItem("FMOD/Generate Bolt Unit Options", true)]
+#if !(UNITY_BOLT_EXIST || UNITY_VISUALSCRIPTING_EXIST)
+        [MenuItem("FMOD/Generate Visual Scripting Units", true)]
         private static bool IsBoltPresent()
         {
             Assembly ludiqCoreRuntimeAssembly = null;
@@ -43,39 +49,27 @@ namespace FMODUnity
 
         private static void TriggerBuild()
         {
-            var target = EditorUserBuildSettings.activeBuildTarget;
-            var group = BuildPipeline.GetBuildTargetGroup(target);
+            BuildTarget target = EditorUserBuildSettings.activeBuildTarget;
+            BuildTargetGroup group = BuildPipeline.GetBuildTargetGroup(target);
 
-            var previousSymbols = PlayerSettings.GetScriptingDefineSymbolsForGroup(group);
+            string previousSymbols = PlayerSettings.GetScriptingDefineSymbolsForGroup(group);
             if (!previousSymbols.Contains("UNITY_BOLT_EXIST"))
+            {
                 PlayerSettings.SetScriptingDefineSymbolsForGroup(group, previousSymbols + ";UNITY_BOLT_EXIST");
+            }
             Settings.Instance.BoltUnitOptionsBuildPending = true;
             AssetDatabase.Refresh();
         }
 
 #else
-        [InitializeOnLoadMethod]
-        private static void RegisterCompleteBuild()
-        {
-            EditorApplication.delayCall += CompleteBuild;
-        }
-
-        private static void CompleteBuild()
-        {
-            if (Settings.Instance.BoltUnitOptionsBuildPending)
-            {
-                Settings.Instance.BoltUnitOptionsBuildPending = false;
-                BuildBoltUnitOptions();
-            }
-        }
-
         private static void BuildBoltUnitOptions()
         {
-            DictionaryAsset projectSettings =
- AssetDatabase.LoadAssetAtPath(PathUtility.FromProject(LudiqCore.Paths.projectSettings), typeof(DictionaryAsset)) as DictionaryAsset;
-
-            List<LooseAssemblyName> assemblyOptions =
- projectSettings.dictionary["assemblyOptions"] as List<LooseAssemblyName>;
+#if (UNITY_BOLT_EXIST)
+            DictionaryAsset projectSettings = AssetDatabase.LoadAssetAtPath(PathUtility.FromProject(LudiqCore.Paths.projectSettings), typeof(DictionaryAsset)) as DictionaryAsset;
+            List<LooseAssemblyName> assemblyOptions = projectSettings.dictionary["assemblyOptions"] as List<LooseAssemblyName>;
+#else
+            List<LooseAssemblyName> assemblyOptions = BoltCore.Configuration.assemblyOptions;
+#endif
 
             if (!assemblyOptions.Contains("FMODUnity"))
             {
@@ -86,8 +80,11 @@ namespace FMODUnity
             {
                 assemblyOptions.Add("FMODUnityResonance");
             }
-
+#if (UNITY_BOLT_EXIST)
             List<Type> typeOptions = projectSettings.dictionary["typeOptions"] as List<Type>;
+#else
+            List<Type> typeOptions = BoltCore.Configuration.typeOptions;
+#endif
             Assembly fmodUnityAssembly = Assembly.Load("FMODUnity");
             Assembly fmodUnityResonanceAssembly = Assembly.Load("FMODUnityResonance");
 
@@ -102,7 +99,12 @@ namespace FMODUnity
                 }
             }
 
+            Codebase.UpdateSettings();
+#if (UNITY_BOLT_EXIST)
             UnitBase.Build();
+#else
+            UnitBase.Rebuild();
+#endif
         }
 
         private static IEnumerable<Type> GetTypesForNamespace(Assembly assembly, string requestedNamespace)
@@ -111,5 +113,16 @@ namespace FMODUnity
                     .Where(t => string.Equals(t.Namespace, requestedNamespace, StringComparison.Ordinal));
         }
 #endif
+
+        public static void Startup()
+        {
+#if (UNITY_BOLT_EXIST || UNITY_VISUALSCRIPTING_EXIST)
+            if (Settings.Instance.BoltUnitOptionsBuildPending)
+            {
+                Settings.Instance.BoltUnitOptionsBuildPending = false;
+                BuildBoltUnitOptions();
+            }
+#endif
+        }
     }
 }

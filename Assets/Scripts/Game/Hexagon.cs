@@ -1,14 +1,23 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Hexagon : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Rigidbody2D rb;
+
+    public float shrinkSpeed = 3f;
+
     private void Start()
     {
+        rb.rotation = Random.Range(0f, 360f);
+        transform.localScale = Vector3.one * 10f;
     }
 
-    // Update is called once per frame
     private void Update()
     {
+        transform.localScale -= Vector3.one * (shrinkSpeed * Time.deltaTime);
+        
+        if(transform.localScale.x <= .05f)
+            Destroy(gameObject);
     }
 }

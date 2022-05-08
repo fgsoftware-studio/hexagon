@@ -6,7 +6,7 @@
 
 files: [
  {
-  "source" : "/Assets/Resources/l10n/en-EN.txt",
-  "translation" : "/Assets/Resources/l10n/%locale%.txt",
+  "source" : "/Assets/Resources/l10n/English",
+  "translation" : "/Assets/Resources/l10n/%language%",
  }
 ]
