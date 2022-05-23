@@ -10,9 +10,7 @@ using STOP_MODE = FMOD.Studio.STOP_MODE;
 public class MainMenu : MonoBehaviour
 {
     public TMP_Text version;
-    public TMP_Text platform;
     public TMP_Text integrity;
-    public GameObject playercolor;
 
     private EventInstance button;
     private EventInstance music;
@@ -27,10 +25,8 @@ public class MainMenu : MonoBehaviour
     {
         var isSignedIn = GameJoltAPI.Instance.CurrentUser != null;
         var Version = Application.version;
-        var Platform = Application.platform.ToString();
 
         version.text = Version;
-        platform.text = Platform;
 
         switch (Application.genuine)
         {
@@ -69,8 +65,6 @@ public class MainMenu : MonoBehaviour
     {
         var isSignedIn = GameJoltAPI.Instance.CurrentUser != null;
 
-        music.stop(STOP_MODE.ALLOWFADEOUT);
-        button.start();
         if (isSignedIn)
             GameJoltUI.Instance.ShowTrophies();
         else if (isSignedIn == false) GameJoltUI.Instance.ShowSignIn();
@@ -79,9 +73,6 @@ public class MainMenu : MonoBehaviour
     public void ButtonLeaderboard()
     {
         var isSignedIn = GameJoltAPI.Instance.CurrentUser != null;
-
-        music.stop(STOP_MODE.ALLOWFADEOUT);
-        button.start();
 
         if (isSignedIn)
             GameJoltUI.Instance.ShowLeaderboards();

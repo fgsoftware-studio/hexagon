@@ -11,9 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 5461556c74a4e3242ababcb9cb38f59c
-  - enabled: 0
-    path: Assets/Scenes/Settings.unity
-    guid: 5ae205fcc137f35479e89a4189d7e4c2
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 1a7b1e8fcdb59be468f11324cf3d85df,
       type: 2}
