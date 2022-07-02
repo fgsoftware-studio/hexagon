@@ -1,12 +1,13 @@
 {
   "dependencies": {
     "com.playeveryware.eos": {
-      "version": "file:C:/Users/gabri/Downloads/com.playeveryware.eos-1.0.4.tgz",
+      "version": "https://github.com/PlayEveryWare/eos_plugin_for_unity_upm.git",
       "depth": 0,
-      "source": "local-tarball",
+      "source": "git",
       "dependencies": {
         "com.unity.modules.jsonserialize": "1.0.0"
-      }
+      },
+      "hash": "b1c455b3322aeeda58be044601b2f23ffc923ac1"
     },
     "com.unity.2d.animation": {
       "version": "7.0.6",

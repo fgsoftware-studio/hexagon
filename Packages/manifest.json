@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.playeveryware.eos": "file:C:/Users/gabri/Downloads/com.playeveryware.eos-1.0.4.tgz",
+    "com.playeveryware.eos": "https://github.com/PlayEveryWare/eos_plugin_for_unity_upm.git",
     "com.unity.2d.animation": "7.0.6",
     "com.unity.2d.pixel-perfect": "5.0.1",
     "com.unity.2d.psdimporter": "6.0.4",
