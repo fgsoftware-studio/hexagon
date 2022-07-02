@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Gamejolt/MainMenu.unity
     guid: eca90ee212ff83c4787b10bbf8d2a66d
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/Gamejolt/Game.unity
     guid: 5461556c74a4e3242ababcb9cb38f59c
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 1a7b1e8fcdb59be468f11324cf3d85df,

@@ -1,0 +1,18 @@
+@-ms-viewport{
+    width: device-width;
+}
+    
+html{
+    background-image: url("https://res.cloudinary.com/dpagffua0/image/upload/v1656022975/bg_x1mfbb.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}

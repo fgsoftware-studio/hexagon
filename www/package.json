@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.0-beta1",
+    "firebase-tools": "^11.1.0",
+    "gulp": "^4.0.2",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-stylus": "^2.7.1",
+    "stylus": "^0.58.1"
+  }
+}

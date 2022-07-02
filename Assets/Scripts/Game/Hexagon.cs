@@ -5,7 +5,7 @@ public class Hexagon : MonoBehaviour
 {
     public Rigidbody2D rb;
 
-    public float shrinkSpeed = 3f;
+    public static float shrinkSpeed = 3f;
 
     private void Start()
     {
