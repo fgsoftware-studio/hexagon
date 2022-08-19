@@ -1,0 +1,101 @@
+{
+  "main": {
+    "id": "0dd0342c46229aa2",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f9543885f2d375f",
+        "type": "leaf",
+        "state": {
+          "type": "kanban",
+          "state": {
+            "file": "boards/Dev.md"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f6c6f21d83bcdf41",
+    "type": "split",
+    "children": [
+      {
+        "id": "8a2b22eef6716398",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9cdbfd709e825ae5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "e3a13626e9162ed1",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#scripting",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a25009fb1cf39ec5",
+    "type": "split",
+    "children": [
+      {
+        "id": "036a316cf7ec388f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "426afa759e69f2b9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "boards/Dev.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "8f9543885f2d375f",
+  "lastOpenFiles": [
+    "boards/Dev.md",
+    "Player color chooser.md",
+    "Player shape chooser.md",
+    "L10N.md",
+    "Player death effect.md",
+    "Player effect chooser.md",
+    "boards/Backlog.md",
+    "boards/Sprint.md",
+    "test.md",
+    "Untitled.md"
+  ]
+}
