@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     public TMP_Text _score;
     
     public float moveSpeed = 600f;
-    
     private float movement = 0;
 
     private void Update()
