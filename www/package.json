@@ -8,6 +8,6 @@
     "gulp-sourcemaps": "^3.0.0",
     "gulp-stylus": "^2.7.1",
     "npm": "^8.19.2",
-    "stylus": "^0.58.1"
+    "stylus": "^0.59.0"
   }
 }
