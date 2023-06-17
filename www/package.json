@@ -6,7 +6,7 @@
     "firebase-tools": "^12.4.0",
     "gulp": "^4.0.2",
     "gulp-sourcemaps": "^3.0.0",
-    "gulp-stylus": "^2.7.1",
+    "gulp-stylus": "^3.0.0",
     "npm": "^9.7.1",
     "stylus": "^0.59.0"
   }
