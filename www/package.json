@@ -3,7 +3,7 @@
     "@snyk/protect": "^1.1183.0",
     "bootstrap": "^5.3.0",
     "firebase": "^9.22.2",
-    "firebase-tools": "^12.4.0",
+    "firebase-tools": "^12.4.1",
     "gulp": "^4.0.2",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-stylus": "^3.0.0",
