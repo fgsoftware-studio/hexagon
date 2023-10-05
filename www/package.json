@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@snyk/protect": "^1.1229.0",
+    "@snyk/protect": "^1.1232.0",
     "bootstrap": "^5.3.2",
     "firebase": "^10.4.0",
     "firebase-tools": "^12.6.0",
