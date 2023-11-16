@@ -7,7 +7,7 @@
     "gulp": "^4.0.2",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-stylus": "^3.0.1",
-    "npm": "^10.2.1",
+    "npm": "^10.2.4",
     "stylus": "^0.60.0"
   }
 }
